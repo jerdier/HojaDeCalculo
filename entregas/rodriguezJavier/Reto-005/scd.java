@@ -1,7 +1,7 @@
 public class VisiCalc {
 
-    private static final int FILAS = 30;
-    private static final int COLUMNAS = 25;
+    private static final int FILAS = 15;
+    private static final int COLUMNAS = 10;
 
     public static void main(String[] args) {
 
