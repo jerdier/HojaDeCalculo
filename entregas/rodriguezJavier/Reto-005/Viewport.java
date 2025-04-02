@@ -86,4 +86,7 @@ public class Viewport {
         return columnaInicio + columnaCursor;
     }
 
+    public HojaDeCalculo getHoja() {
+        return hoja;
+    }
 }

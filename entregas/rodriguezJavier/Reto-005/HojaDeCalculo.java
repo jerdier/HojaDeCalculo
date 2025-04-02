@@ -25,5 +25,31 @@ public class HojaDeCalculo {
 
     public int getNumeroDeColumnas() {
         return COLUMNAS;
-    }    
+    }
+    public void ordenarColumna(int columna) {
+        for (int i = 0; i < FILAS - 1; i++) {
+            for (int j = i + 1; j < FILAS; j++) {
+                String contenidoI = celdas[i][columna].getContenido();
+                String contenidoJ = celdas[j][columna].getContenido();
+                
+                try {
+                    double numI = Double.parseDouble(contenidoI);
+                    double numJ = Double.parseDouble(contenidoJ);
+                    if (numI > numJ) {
+                        intercambiarCeldas(i, columna, j, columna);
+                    }
+                } catch (NumberFormatException e) {
+                    if (contenidoI.compareTo(contenidoJ) > 0) {
+                        intercambiarCeldas(i, columna, j, columna);
+                    }
+                }
+            }
+        }
+    }
+
+    private void intercambiarCeldas(int fila1, int columna1, int fila2, int columna2) {
+        Celda temp = celdas[fila1][columna1];
+        celdas[fila1][columna1] = celdas[fila2][columna2];
+        celdas[fila2][columna2] = temp;
+    }
 }
